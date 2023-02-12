@@ -1,0 +1,83 @@
+header {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+
+    .profile {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+    }
+
+    #overlay {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $dark;
+        opacity: 0.3;
+        border-style: none;
+    }
+
+    #qr-button {
+        z-index: 3;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: $light;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 15vw;
+        height: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8vw;
+    }
+
+    #logo-container {
+        position: fixed;
+        top: 10vw;
+        right: 10vw;
+        width: 25vw;
+        height: auto;
+        z-index: 3;
+    }
+
+    nav {
+        z-index: 3;
+        background-color: $light;
+        position: fixed;
+        top: 50%;
+        left: 0;
+        height: 85vh;
+        width: 60vw;
+        transform: translate(-100%, -50%);
+        transition: transform 0.5s cubic-bezier(.5, .7, .5, .3);
+
+        &.open {
+            transform: translate(0, -50%);
+        }
+
+        #nav-handle {
+            background-color: $secondary;
+            position: absolute;
+            top: 30%;
+            right: 0;
+            transform: translateX(80%);
+            width: 15vw;
+            height: 13%;
+            font-size: 8vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        ul {
+        }
+    }
+}

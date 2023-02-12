@@ -1,1 +1,1 @@
-footer{background-color:blue}
+footer #dark-mode-toggle{position:fixed;bottom:10px;right:10px;width:10vw;height:10vw;font-size:10vw}footer #dark-mode-toggle i{font-size:0;transition:font-size .2s ease-in-out;position:absolute;left:0;bottom:0}footer #dark-mode-toggle .selected{font-size:1em}

@@ -1,8 +1,9 @@
 main {
-    background-color: green;
     z-index: 2;
 
-    .cta {
+    #cta {
+        border-left-style: none;
+        border-right-style: none;
         width: 100%;
         height: 10vh;
         display: flex;

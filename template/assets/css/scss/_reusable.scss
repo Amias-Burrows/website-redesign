@@ -10,13 +10,8 @@ a, button {
     font-family: 'Shanti', sans-serif;
 }
 
-div, section, nav {
+.cartoon-container {
     border: solid 3px $dark;
-}
-
-section {
-border-style: none;
-border-bottom-style: solid;
 }
 
 a {

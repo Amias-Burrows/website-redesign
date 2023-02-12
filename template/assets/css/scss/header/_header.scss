@@ -46,7 +46,8 @@ header {
         z-index: 3;
     }
 
-    nav {
+    #header-nav {
+        border-left-style: none;
         z-index: 3;
         background-color: $light;
         position: fixed;
@@ -55,7 +56,7 @@ header {
         height: 85vh;
         width: 60vw;
         transform: translate(-100%, -50%);
-        transition: transform 0.5s cubic-bezier(.5, .7, .5, .3);
+        transition: transform 0.5s cubic-bezier(.7, .3, .3, .5);
 
         &.open {
             transform: translate(0, -50%);
@@ -75,9 +76,6 @@ header {
             justify-content: center;
             border-radius: 10px;
             cursor: pointer;
-        }
-        
-        ul {
         }
     }
 }

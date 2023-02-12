@@ -10,13 +10,8 @@ a, button {
   font-family: "Shanti", sans-serif;
 }
 
-div, section, nav {
+.cartoon-container {
   border: solid 3px #000000;
-}
-
-section {
-  border-style: none;
-  border-bottom-style: solid;
 }
 
 a {
@@ -76,7 +71,8 @@ html body header #logo-container {
   height: auto;
   z-index: 3;
 }
-html body header nav {
+html body header #header-nav {
+  border-left-style: none;
   z-index: 3;
   background-color: #FFFFFF;
   position: fixed;
@@ -85,12 +81,12 @@ html body header nav {
   height: 85vh;
   width: 60vw;
   transform: translate(-100%, -50%);
-  transition: transform 0.5s cubic-bezier(0.5, 0.7, 0.5, 0.3);
+  transition: transform 0.5s cubic-bezier(0.7, 0.3, 0.3, 0.5);
 }
-html body header nav.open {
+html body header #header-nav.open {
   transform: translate(0, -50%);
 }
-html body header nav #nav-handle {
+html body header #header-nav #nav-handle {
   background-color: #06F07F;
   position: absolute;
   top: 30%;
@@ -106,10 +102,11 @@ html body header nav #nav-handle {
   cursor: pointer;
 }
 html body main {
-  background-color: green;
   z-index: 2;
 }
-html body main .cta {
+html body main #cta {
+  border-left-style: none;
+  border-right-style: none;
   width: 100%;
   height: 10vh;
   display: flex;
@@ -118,6 +115,21 @@ html body main .cta {
   justify-content: space-around;
   background-color: #F90658;
 }
-html body footer {
-  background-color: blue;
+html body footer #dark-mode-toggle {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 10vw;
+  height: 10vw;
+  font-size: 10vw;
+}
+html body footer #dark-mode-toggle i {
+  font-size: 0;
+  transition: font-size 0.2s ease-in-out;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+html body footer #dark-mode-toggle .selected {
+  font-size: 1em;
 }/*# sourceMappingURL=root.css.map */

@@ -1,5 +1,9 @@
 * {
   font-family: "Karla", sans-serif;
+  transition-property: background-color, color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  color: #FFFFFF;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,7 +15,7 @@ a, button {
 }
 
 .cartoon-container {
-  border: solid 3px #FFFFFF;
+  border: solid 3px #000000;
 }
 
 a {
@@ -44,7 +48,7 @@ html body header #overlay {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #FFFFFF;
+  background-color: #000000;
   opacity: 0.3;
   border-style: none;
 }
@@ -102,6 +106,8 @@ html body header #header-nav #nav-handle {
   cursor: pointer;
 }
 html body main {
+  background-color: #4E041D;
+  height: 50vh;
   z-index: 2;
 }
 html body main #cta {

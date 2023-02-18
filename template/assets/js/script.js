@@ -34,16 +34,40 @@ const mobile_nav_open = () => {
 const handle_night_mode = () => {
     let handle = $('#dark-mode-toggle');
     let css = $('link#main-stylesheet');
+    let value = css[0].attributes[2].nodeValue;
 
-    handle.click(() => {
+    if (localStorage.getItem('dark-mode')) {
         handle.find('.selected')
             .removeClass('selected')
             .siblings()
             .addClass('selected');
         
-            css[0]['href'].includes('root-dark')
-                ? css[0]['href'] = css[0]['href'].replace('root-dark.css', 'root.css')
-                : css[0]['href'] = css[0]['href'].replace('root.css', 'root-dark.css');
+        css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('root.css', 'dark-root.css');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        localStorage.setItem('dark-mode', true);
+        handle.find('.selected')
+            .removeClass('selected')
+            .siblings()
+            .addClass('selected');
+        
+        css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('root.css', 'dark-root.css');
+    } else {
+        localStorage.setItem('dark-mode', false);
+    }
+
+    handle.click(() => {
+        localStorage.getItem('dark-mode') == true
+            ? localStorage.setItem('dark-mode', false)
+            : localStorage.setItem('dark-mode', true);
+
+        handle.find('.selected')
+            .removeClass('selected')
+            .siblings()
+            .addClass('selected');
+        
+        css[0].attributes[2].nodeValue.includes('dark-root')
+            ? css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('dark-root.css', 'root.css')
+            : css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('root.css', 'dark-root.css');
     });
 }
 

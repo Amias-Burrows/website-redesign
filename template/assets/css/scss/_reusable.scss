@@ -1,5 +1,9 @@
 * {
     font-family: 'Karla', sans-serif;
+    transition-property: background-color, color, border-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    color: $dark;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,7 +15,7 @@ a, button {
 }
 
 .cartoon-container {
-    border: solid 3px $dark;
+    border: solid 3px $const-dark;
 }
 
 a {

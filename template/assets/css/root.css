@@ -1,5 +1,9 @@
 * {
   font-family: "Karla", sans-serif;
+  transition-property: background-color, color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  color: #000000;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -102,6 +106,8 @@ html body header #header-nav #nav-handle {
   cursor: pointer;
 }
 html body main {
+  background-color: #FFFFFF;
+  height: 50vh;
   z-index: 2;
 }
 html body main #cta {

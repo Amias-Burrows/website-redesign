@@ -33,12 +33,17 @@ const mobile_nav_open = () => {
     // handles the night-mode toggle
 const handle_night_mode = () => {
     let handle = $('#dark-mode-toggle');
+    let css = $('link#main-stylesheet');
 
     handle.click(() => {
         handle.find('.selected')
             .removeClass('selected')
             .siblings()
             .addClass('selected');
+        
+            css[0]['href'].includes('root-dark')
+                ? css[0]['href'] = css[0]['href'].replace('root-dark.css', 'root.css')
+                : css[0]['href'] = css[0]['href'].replace('root.css', 'root-dark.css');
     });
 }
 

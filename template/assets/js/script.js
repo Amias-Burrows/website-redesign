@@ -3,6 +3,7 @@ const init = () => {
 
     mobile_nav_open();
     handle_night_mode();
+    qr_activate();
 }
 
     // Handles opening the nav bar with dragging functionality
@@ -24,9 +25,9 @@ const mobile_nav_open = () => {
     handle.click(() => {
         
             // Flip-Flop for the .open class
-        nav.hasClass('open')
-            ? nav.removeClass('open')
-            : nav.addClass('open');
+        nav.hasClass('closed')
+            ? nav.removeClass('closed')
+            : nav.addClass('closed');
     })
 }
 
@@ -42,7 +43,7 @@ const handle_night_mode = () => {
             .siblings()
             .addClass('selected');
         
-        css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('root.css', 'dark-root.css');
+        css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('root', 'dark-root');
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         localStorage.setItem('dark-mode', true);
         handle.find('.selected')
@@ -50,7 +51,7 @@ const handle_night_mode = () => {
             .siblings()
             .addClass('selected');
         
-        css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('root.css', 'dark-root.css');
+        css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('root', 'dark-root');
     } else {
         localStorage.setItem('dark-mode', false);
     }
@@ -66,9 +67,12 @@ const handle_night_mode = () => {
             .addClass('selected');
         
         css[0].attributes[2].nodeValue.includes('dark-root')
-            ? css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('dark-root.css', 'root.css')
-            : css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('root.css', 'dark-root.css');
+            ? css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('dark-root', 'root')
+            : css[0].attributes[2].nodeValue = css[0].attributes[2].nodeValue.replace('root', 'dark-root');
     });
+}
+
+const qr_activate = () => {
 }
 
 init();

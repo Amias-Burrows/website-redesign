@@ -1,0 +1,18 @@
+section.floating-block {
+    @include cartoon;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    width: 80%;
+    height: 80%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.2s;
+
+    &.active {
+        z-index: 99;
+        opacity: 1;
+    }
+}

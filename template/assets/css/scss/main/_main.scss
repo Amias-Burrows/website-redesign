@@ -1,17 +1,65 @@
 main {
     background-color: $light;
-    height: 50vh;
+    height: 60vh;
     z-index: 2;
 
     #cta {
+        @include cartoon($primary, $const-light);
         border-left-style: none;
         border-right-style: none;
-        width: 100%;
         height: 10vh;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        background-color: $primary;
+        position: relative;
+        box-shadow: none;
+
+        a {
+            background-color: transparent;
+            padding: 0 5px;
+            text-shadow: rgba($const-dark, 0.4) 1px 1px;
+
+            &.accent-btn {
+                @include underline-btn-hover($accent-dark);
+            }
+
+            &.secondary-btn {
+                @include underline-btn-hover($secondary);
+            }
+        }
+    }
+
+    #details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 50vh;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 35vh;
+            overflow: scroll;
+
+            h1 {
+                text-shadow: $primary 2px 2px;
+                font-size: 40px;
+                font-weight: 400;
+            }
+
+            p {
+                padding: 0 20px;
+            }
+        }
+
+        #passions {
+            background-color: $accent;
+            color: $const-dark;
+            @include btn($accent, $const-dark);
+        }
     }
 }

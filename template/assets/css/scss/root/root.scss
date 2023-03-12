@@ -1,18 +1,31 @@
 @import '../colours';
 
+@import '../fonts';
+
 @import '../reusable';
+
+@import '../animations';
+
+@import '../section';
 
 html {
     padding: 0;
     margin: 0;
+    overflow: hidden;
+
     body {
         padding: 0;
         margin: 0;
+        overflow: hidden;
 
         @import '../header/header';
 
         @import '../main/main';
 
         @import '../footer/footer';
+
+        section {
+            @include floating-block;
+        }
     }
 }

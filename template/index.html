@@ -8,7 +8,7 @@
         <title>AR Burrows</title>
 
             <!-- Root Stylesheet -->
-        <link id="main-stylesheet" rel="stylesheet" href="./assets/css/root.css"/>
+        <link id="main-stylesheet" rel="stylesheet" href="./assets/css/root.min.css"/>
 
             <!-- Preconnect to Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +36,12 @@
             <a id="logo-container" href="/">
                 <img src="./assets/img/logo.svg">
             </a>
-            <nav id="header-nav" class="cartoon-container">
-                <div id="nav-handle" class="cartoon-container">
+            <nav id="header-nav" class="closed">
+                <div id="nav-handle">
                     <i class="fa-solid fa-grip-lines-vertical fa-1x"></i>
                 </div>
-                <ul>
-                    <li>
+                <ul id="nav-list">
+                    <li class="selected">
                         <a href="#">Home</a>
                     </li>
                     <li>
@@ -55,23 +55,25 @@
                     </li>
                 </ul>
                 <div id="social-links">
-                    <i class="fa-brands fa-square-github"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                    <i class="fa-brands fa-square-instagram"></i>
-                    <i class="fa-brands fa-square-facebook"></i>
-                    <i class="fa-brands fa-square-twitter"></i>
+                    <a class="link main-link" href=""><i class="fa-brands fa-square-github"></i></a>
+                    <a class="link" href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="link" href=""><i class="fa-brands fa-square-instagram"></i></a>
+                    <a class="link" href=""><i class="fa-brands fa-square-facebook"></i></a>
+                    <a class="link" href=""><i class="fa-brands fa-square-twitter"></i></a>
                 </div>
             </nav>
         </header>
         <main>
-            <section id="cta" class="cartoon-container">
-                <a class="btn" href="#">Button</a>
-                <a class="btn" href="#">Button</a>
+            <section id="cta">
+                <a class="accent-btn" href="#">Contact Me</a>
+                <a class="secondary-btn" href="#">My Portfolio</a>
             </section>
             <section id="details">
-                <h1>Amias Burrows</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <a class="btn" href="#">My Passions</a>
+                <div class="content">
+                    <h1>Amias Burrows</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <a id="passions" href="#">My Passions</a>
             </section>
         </main>
         <footer>
@@ -80,6 +82,12 @@
                 <i id="dark-mode" class="fa-regular fa-moon"></i>
             </a>
         </footer>
+        <section id="qr-block" class="floating-block">
+            <div class="section-bar">
+                <i class="fa-solid fa-circle-mark"></i>
+            </div>
+            <div id="qr"></div>
+        </section>
     </body>
     <script id="font-awesome" src="https://kit.fontawesome.com/4c135453d1.js" crossorigin="anonymous"></script>
     <script id="jquery" src="https://code.jquery.com/jquery-latest.js"></script>

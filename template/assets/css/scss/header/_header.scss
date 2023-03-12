@@ -22,11 +22,12 @@ header {
     }
 
     #qr-button {
+        @include cartoon;
+
         z-index: 3;
         position: absolute;
         top: 10px;
         left: 10px;
-        background-color: $light;
         border-radius: 50%;
         cursor: pointer;
         width: 15vw;
@@ -47,23 +48,31 @@ header {
     }
 
     #header-nav {
+        @include cartoon;
+
         border-left-style: none;
         z-index: 3;
-        background-color: $light;
         position: fixed;
         top: 50%;
         left: 0;
         height: 85vh;
         width: 60vw;
-        transform: translate(-100%, -50%);
-        transition: transform 0.5s cubic-bezier(.7, .3, .3, .5);
+        translate: 0 -50%;
+        transform: translateX(0);
+        transition: transform 0.5s cubic-bezier(.7, .3, .3, .5), box-shadow 0.5s ease-in-out, background-color 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
-        &.open {
-            transform: translate(0, -50%);
+        &.closed {
+            transform: translateX(-100%);
+            box-shadow: none;
         }
 
         #nav-handle {
-            background-color: $secondary;
+            @include cartoon($secondary, $const-dark);
+
             position: absolute;
             top: 30%;
             right: 0;
@@ -76,6 +85,86 @@ header {
             justify-content: center;
             border-radius: 10px;
             cursor: pointer;
+        }
+
+        #nav-list {
+            @include cartoon;
+
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+
+            li {
+                width: calc(90% - 40px);
+                margin-right: 10%;
+                margin-bottom: 10px;
+                padding: 15px 20px;
+                border-radius: 0 10px 10px 0;
+                text-align: right;
+                position: relative;
+            
+                &.selected {
+                    background-color: $primary;
+
+                    a {
+                        color: $const-light;
+                        margin: 0 !important;
+                    }
+                }
+
+                ::after {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    border-radius: 50%;
+                    width: 10px;
+                    height: 10px;
+                    transition: background-color 0.2s ease-in-out;
+                }
+
+                &:hover {
+                    
+                    margin-right: 20px;
+
+                    &::after {
+                        background-color: rgba($secondary, 0.2);
+                    }
+                }
+
+                a {
+                    transition: margin 0.2s ease-in-out;
+                }
+            }
+        }
+        
+        #social-links {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 90%;
+            gap: 20px;
+
+            .link {
+                font-size: 20vw;
+                text-align: center;
+                color: $dark;
+
+                &.main-link {
+                    font-size: 30vw;
+                    width: 100%;
+                    i {
+                        color: $primary;
+                    }
+                }
+
+                &:hover {
+                    i {
+                        color: $secondary;
+                    }
+                }
+            }
         }
     }
 }

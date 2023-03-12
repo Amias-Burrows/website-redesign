@@ -1,6 +1,12 @@
 @import '../dark-colours';
 
+@import '../fonts';
+
 @import '../reusable';
+
+@import '../animations';
+
+@import '../section';
 
 html {
     padding: 0;
@@ -14,5 +20,9 @@ html {
         @import '../main/main';
 
         @import '../footer/footer';
+
+        section {
+            @include floating-block;
+        }
     }
 }
